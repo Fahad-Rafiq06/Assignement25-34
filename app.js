@@ -79,7 +79,7 @@ function dice(){
 var dice1 = Math.random() * 6;
 
 var dice2 = Math.round(dice1);
-document.getElementById("dice").innerText = "Random dice value is " + dice2;
+document.getElementById("dice").innerText = "\r\n Random dice value is " + dice2 + "\r\n";
 }
 
 function headtail(){
@@ -87,10 +87,10 @@ function headtail(){
 
     var htround = Math.round(htrandom);
     if(htround == 0){
-    document.getElementById("ht").innerText = "Head it is"
+    document.getElementById("ht").innerText = "\r\n Head it is"
 }
 else{
-    document.getElementById("ht").innerText = "Tail it is"
+    document.getElementById("ht").innerText = "\r\n Tail it is"
 }
 }
 // ==========Generating random number between 1 to 100==================
@@ -99,7 +99,7 @@ var rnum = Math.random() * 100;
 
 var roundnum = Math.round(rnum);
 
-document.getElementById("rnum").innerText = "Random number between 0 to 100 is "+ roundnum + "\r\n";
+document.getElementById("rnum").innerText = " \r\n Random number between 0 to 100 is "+ roundnum + "\r\n";
 
 // =========Secret Random Number===================
 
@@ -151,9 +151,43 @@ else{
 var hour = dates.getHours();
 console.log(hour);
 if(hour < 12){
-    document.getElementById("hour").innerText = "\r\n" + "It's AM"
+    document.getElementById("hour").innerText = "\r\n" + "It's AM" +   "\r\n"
 }
 else{
-    document.getElementById("hour").innerText =  "\r\n" + "It's PM"
+    document.getElementById("hour").innerText =  "\r\n" + "It's PM"+   "\r\n"
 }
 
+// ==========Finding out the birth year============
+
+var age = prompt("Enter your age");
+
+var year = dates.getFullYear();
+
+var birthYear = year - age ;
+
+document.getElementById("age").innerText = "Your Age is: " + age;
+
+document.getElementById("bYear").innerText = "Your Birth year is " + birthYear;
+
+// ============K-Electric Bill==================
+
+function bill() {
+    var name = document.getElementById("name").value;
+    var month = document.getElementById("month").value;
+    var nou = document.getElementById("nou").value;
+    var cpu = document.getElementById("cpu").value;
+    var late = 500;
+
+    if (name == "" || month == "" || nou == "" || cpu == "") {
+        alert("Enter all information first");
+    }
+    else {
+        var net = nou * cpu;
+        document.getElementById("net").innerHTML = "<p> Net Amount Payable (Within Due Date) " + net + "</p>";
+        document.getElementById("late").innerHTML = "<p> LAte Payment Charges " + late + "</p>";
+        var gross = net + late;
+        document.getElementById("gross").innerHTML = "<p> Gross Amount Payable(After Due Date) " + gross;
+
+    }
+
+}
