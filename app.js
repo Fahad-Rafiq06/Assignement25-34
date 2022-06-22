@@ -93,3 +93,67 @@ else{
     document.getElementById("ht").innerText = "Tail it is"
 }
 }
+// ==========Generating random number between 1 to 100==================
+
+var rnum = Math.random() * 100;
+
+var roundnum = Math.round(rnum);
+
+document.getElementById("rnum").innerText = "Random number between 0 to 100 is "+ roundnum + "\r\n";
+
+// =========Secret Random Number===================
+
+var srandom = Math.random() * 10;
+
+var srouund = Math.round(srandom);
+
+var secretnumber = parseInt(prompt("Type any number between 0 to 10"));
+
+if(secretnumber == srouund){
+    alert("You win, the number is correct")
+}
+else{
+    alert("Try Again, the number you have entered is not match. Correct number was " + srouund)
+}
+
+// ==========Displaying date================
+
+var dates = new Date();
+
+document.getElementById("dates").innerText = "\r\n" + dates ;
+
+// ===========Displaying Current Month=============
+
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "Spetember", "October", "November", "December"];
+
+var month = dates.getMonth();
+
+document.getElementById("month").innerText = "\r\n Current Month: " + months[month] + "\r\n" ;
+
+// ==========Display Current Day===============
+
+var day = dates.getDay();
+var days = ["Sun","Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+alert("today is "+days[day]);
+
+// =============Display Funday or Working day================
+
+if(days[day] === "Sun" || days[day] === "Sat"){
+    alert("Today is a Funday")
+}
+else{
+    alert("Today is a Working Day")
+}
+
+// =======Displaying AM and PM===========
+
+var hour = dates.getHours();
+console.log(hour);
+if(hour < 12){
+    document.getElementById("hour").innerText = "\r\n" + "It's AM"
+}
+else{
+    document.getElementById("hour").innerText =  "\r\n" + "It's PM"
+}
+
